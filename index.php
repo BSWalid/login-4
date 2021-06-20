@@ -10,8 +10,14 @@ if(!empty($_SESSION['old'])) $old = $_SESSION['old'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+
     <title>Form handling in PHP</title>
     <style>
+        body{
+            font-family: 'Roboto', sans-serif;
+        }
         fieldset {
             width: 1000px; 
             margin: auto;
@@ -38,11 +44,26 @@ if(!empty($_SESSION['old'])) $old = $_SESSION['old'];
         .is-invalid {
             color: #FF4430;
         }
+
+        a{
+            
+
+            font-family: 'Roboto';
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 25px;
+            
+
+        }
+        a:hover{
+
+            color:#FF4430 ;
+        }
     </style>
 </head>
 <body>
     <fieldset>
-        <legend><h1>Log in to your account</h1></legend>
+        <legend><h1>Login new User</h1></legend>
         <form action="src/Auth/login.php" method="POST">
             <input 
             type="text" 
@@ -68,9 +89,14 @@ if(!empty($_SESSION['old'])) $old = $_SESSION['old'];
                     <?php
                 }
             } ?>
+
+            <a href="./register_view.php">Register your self</a>
             <button type="submit">Login</button>
         </form>
     </fieldset>
+
+
+    
 
     <pre><code>
     <?php session_destroy(); ?>
